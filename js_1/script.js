@@ -95,7 +95,7 @@ let name = prompt('name');
 let fname = prompt('last name');
 let old = prompt('old');
 
-alert(res = "Вітаю " + name + ' ' + fname + " Тобі " + old);
+alert("Вітаю " + name + ' ' + fname + " Тобі " + old);
 
 // - За допомогою оператора typeof визначити типи наступних змінних та вивести їх в консоль.
 // let a = 100; let b = '100'; let c = true;
