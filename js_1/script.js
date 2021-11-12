@@ -85,7 +85,6 @@ document.write(l);
 let firstName = 'Олександр ';
 let middleName = 'Олександрович ';
 let lastName = 'Фединець';
-let res;
 
 let person = firstName + ' ' + middleName + ' ' + lastName;
 
