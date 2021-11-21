@@ -50,10 +50,21 @@ function seredne(arr){
 
 }
 // - створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math використовувати заборонено);
-// ?
-//     ?
-//         ?
-
+function minMax(arg) {
+        let min = arguments[0];
+        let max = arguments[0];
+        for (const element of arguments) {
+            if (element > max) {
+                max = element;
+            }
+            if (element < min) {
+                min = element;
+            }
+        }
+        console.log("max ", max);
+        return min;
+    }
+    document.write('Мінімальне число з введених: ' + minMax(100, 20, 3, 100, 2021))
 
 
 // - створити функцію яка заповнює масив рандомними числами
@@ -75,7 +86,6 @@ function randomLimit(a){
 }
 // - Функція приймає масив та робить з нього новий масив в зворотньому порядку. [1,2,3] -> [3, 2, 1].
 // function reverse(arr){
-
 
 
 function revers(arr){
