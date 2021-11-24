@@ -8,7 +8,7 @@ function min(a, b, c){
     }else{
         mini = c;
     }
-    return mini;
+    console.log(mini);
 }
 // - створити функцію яка приймає три числа та виводить найбільше. (Без Math.max!)
 let maxi = 0;
@@ -20,19 +20,36 @@ function max(a, b, c){
     }else{
         maxi = c;
     }
-    return maxi;
+    console.log(maxi);
 }
 // - створити функцію яка повертає найбільше число з масиву
 let array = [1,2,3,4,5,6,7,8,9,210];
 function arrmax(arr){
-    return Math.max.apply(null, arr);
+    // return Math.max.apply(null, arr);
+    let max = arr[0];
+    for(let i = 0; i < arr.length; i++){
+
+        if(arr[i] > max){
+            max = arr[i];
+        }
+    }
+    console.log(max);
 }
 
+arrmax(array);
 // - створити функцію яка повертає найменьше число з масиву
 function arrmin(arr){
-    return Math.min.apply(null, arr);
-}
+    // return Math.min.apply(null, arr);
+    let min = arr[0];
+    for(let i = 0; i < arr.length; i++){
 
+        if(min < arr[i]){
+            min = arr[i];
+        }
+    }
+    console.log(min);
+}
+arrmin(array);
 // - створити функцію яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад [1,2,10]->13
 let suma = 0;
 function sum(arr){
@@ -89,7 +106,7 @@ function randomLimit(a){
 
 
 function revers(arr){
-    let arr5 = []
+    let arr5 = [];
     for(let i = arr.length-1; i >= 0; i-- ){
         arr5.push(arr[i]);
     }
