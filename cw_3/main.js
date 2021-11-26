@@ -14,7 +14,7 @@ for(let i = 0; i < arr.length; i++){
 //     3. перебрати циклом while та вивести  числа тільки з непарним індексом
 let  i = 0;
 while (i < arr.length) {
-    if(i % 2 !=== 0){
+    if(i % 2 != 0){
         console.log(arr[i]);
     }
     i++;
@@ -22,7 +22,7 @@ while (i < arr.length) {
 }
 // 4. перебрати циклом for та вивести  числа тільки з непарним індексом
 for (let i = 0; i < arr.length; i++){
-    if(i % 2 !== 0){
+    if(i % 2 != 0){
         console.log(arr[i]);
     }
 }
