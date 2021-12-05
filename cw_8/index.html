@@ -50,9 +50,27 @@
         i.style.width = '50%';
     }
 
+
+
+
+
+
     // d) отримує текст який зберігається в елементі з класом listElement2
     let resText = document.getElementsByClassName('listElement2');
-    console.log(resText.innerText);
+    for (i of resText){
+       console.log(i.innerText );
+    }
+
+
+
+
+
+
+
+
+
+
+
     // e) отримує всі елементи li та змінює ім колір фону на сірий
     let resLi = document.getElementsByTagName('li');
     for (let i of resLi){
