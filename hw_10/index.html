@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="text">lalala</div>
+
+<button id="btn">enter pleas!</button>
+
+<input type="text" style="display: block" id="inp">
+<button id="perevirka">Перевірка</button>
+
+<menu id="menu"> menu
+    <li class="menuli">clac1</li>
+    <li class="menuli">clac2</li>
+    <li class="menuli">clac3</li>
+</menu>
+
+<script>
+    // - Создать произвольный елемент с id = text.  Используя JavaScript, сделайте так, чтобы при клике на кнопку исчезал элемент с id="text".
+    let clean = document.getElementById('text');
+    clean.onclick = function () {
+        clean.innerText = ' ';
+        console.log('click');
+    };
+    //
+    //     - Создайте кнопку, при клике на которую, она будет скрывать сама себя.
+    let btn = document.getElementById('btn');
+
+    btn.onclick = function () {
+        btn.hidden = true;
+        console.log('no_btn')
+    }
+    //
+    // - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+    let btn2 = document.getElementById('perevirka');
+    let inp = document.getElementById('inp');
+    btn2.onclick = function () {
+        if (inp.value > 18) {
+            alert('Перевірка успішна');
+        } else {
+            alert('Eror');
+        }
+    }
+    // - Создайте меню, которое раскрывается/сворачивается при клике
+    let menu = document.getElementById('menu');
+    let menuli = document.getElementsByClassName('menuli');
+    for (let i of menuli) {
+        i.style.display = 'none';
+    }
+
+
+    menu.onclick = function () {
+        for (let i of menuli) {
+            i.style.display = 'block';
+        }
+    }
+
+
+    //
+    // - Создать список комментариев , пример объекта коментария - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
+    let comments = [
+        {name: 'Максим', body: 'Ти все знаєш'},
+        {name: 'Іван', body: 'Рано вставати'},
+        {name: 'Льоня', body: ' Фільм, дивись'},
+        {name: 'Іра', body: 'В тебе є?'},
+    ];
+    //     Вывести список комментариев в документ, каждый в своем блоке.
+    //     Добавьте каждому комментарию по кнопке для сворачивания его body.
+
+    // let divFather = document.createElement('div');
+    // for (let i of comments) {
+    //     let resultCom = document.createElement('div');
+    //     let username = document.createElement('h3');
+    //     username.innerText = i.name;
+    //     resultCom.append(username);
+    //     let userinfo = document.createElement('p');
+    //     userinfo.innerText = i.body;
+    //     resultCom.append(userinfo);
+    //     let userbtn = document.createElement('button');
+    //     userbtn.innerText = 'Створити';
+    //     resultCom.append(userbtn);
+    //     divFather.append(resultCom);
+    //     userbtn.onclick = function () {
+    //         userinfo.classList.add('pHidden');
+    //         let pclose = document.getElementsByClassName('pHidden');
+    //         for (let p of pclose) {
+    //             p.style.display = 'none';
+    //         }
+    //
+    //     }
+    //
+    // }
+    // document.body.appendChild(divFather);
+
+
+    let divFather = document.createElement('div');
+    for (let i = 0; i < comments.length; i++ ) {
+        let resultCom = document.createElement('div');
+        let username = document.createElement('h3');
+        username.innerText = comments[i].name;
+        resultCom.append(username);
+        let userinfo = document.createElement('p');
+        userinfo.innerText = comments[i].body;
+        resultCom.append(userinfo);
+        let userbtn = document.createElement('button');
+        userbtn.innerText = 'згорнути';
+        resultCom.append(userbtn);
+        divFather.append(resultCom);
+        userbtn.onclick = function () {
+            userinfo.classList.add('pHidden', 'pHiddenoff');
+            let pclose = document.getElementsByClassName('pHidden');
+            for (let p of pclose) {
+                p.style.display = 'none';
+            }
+
+        }
+        userbtn.onmouseover = function (){
+            let popen = document.getElementsByClassName('pHiddenoff');
+            for (let p of popen) {
+                p.style.display = 'block';
+            }
+        }
+
+    }
+    document.body.appendChild(divFather);
+
+
+</script>
+</body>
+</html>
