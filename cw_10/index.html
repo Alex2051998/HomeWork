@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form id="form1">
+        <input type="text", id="i11">
+        <input type="text", id="i12">
+    </form>
+    <form id="form2">
+        <input type="text", id="i21">
+        <input type="text", id="i22">
+    </form>
+    <button id="btn">console.log</button>
+</div>
+<hr>
+
+<div>
+    <input type="number", id="i31">
+    <input type="number", id="i32">
+    <input type="text", id="i33">
+    <button id="btnInput2">enter</button>
+</div>
+<hr>
+
+
+<div>
+    <input type="text", id="text">
+    <button id="btnp">Перевірка</button>
+</div>
+<hr>
+<div>
+    <input type="text", id="text1">
+    <button id="btnp1">Перевірка</button>
+</div>
+
+<script>
+    // - створити 2 форми  по 2 інпути в кожній. ствоирити кнопку при кліку на яку считується та виводиться на консоль інформація з цих 2х форм.
+    //     Кнопка повинна лежати за межами форм (Щоб ьуникнути  перезавантаження сторінки)
+    // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
+    let btn = document.getElementById('btn');
+    btn.onclick = function (){
+        console.log('input1', document.getElementById('i11').value);
+        console.log('input2', document.getElementById('i12').value);
+        console.log('input3', document.getElementById('i21').value);
+        console.log('input4', document.getElementById('i22').value);
+    }
+
+
+    //
+    //
+    // - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+    //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+    // (Додатковачастина для завдання)
+    let input_1 = document.getElementById('i31');
+    let input_2 = document.getElementById('i32');
+    let input_3 = document.getElementById('i33');
+    let btnInput2 = document.getElementById('btnInput2')
+    btnInput2.onclick = function (){
+        let table = document.createElement('table');
+        let tr = input_1.value;
+        let td = input_2.value;
+        for (let i = 0; i < tr; i++){
+            let tr1 = document.createElement('tr');
+            table.append(tr1);
+            for (let k = 0; k < td; k++){
+                let td1 = document.createElement('td');
+                td1.innerText = input_3.value;
+                tr1.append(td1);
+
+            }
+        }
+        document.body.appendChild(table);
+    }
+
+    //
+    //
+    // - Сворити масив не цензцрних слів.
+    //     Сворити інпут текстового типу.
+    //     Якщо людина вводить слово і воно міститься в масиві не цензурних слів
+    // кинути алерт з попередженням.
+    //     Перевірку робити при натисканні на кнопку
+
+    let arr =['Корона', 'Вакцина', 'Політика'];
+    let btnp = document.getElementById('btnp');
+    btnp.onclick = function (){
+        let res = document.getElementById('text');
+        for (let i of arr){
+            if (res.value == i){
+                alert('ojojoj');
+            }
+        }
+
+    }
+
+    //
+    //
+    // - Сворити масив не цензцрних слів.
+    //     Сворити інпут текстового типу.
+    //     Потрібно перевіряти чи не містить ціле речення в собі погані слова.
+    //     Кинути алерт з попередженням у випадку якщо містить.
+    //     Перевірку робити при натисканні на кнопку
+    //     .includes('синий');
+    let btnp1 = document.getElementById('btnp1');
+    btnp1.onclick = function (){
+        let res = document.getElementById('text1');
+        let inputvalue = res.value;
+        for (let ar of arr){
+            if (inputvalue.includes(ar)){
+                alert('ojojoj');
+                res.value = null;
+
+            }
+        }
+
+    }
+
+</script>
+</body>
+</html>
