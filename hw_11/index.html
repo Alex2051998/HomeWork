@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="f1">
+    <div>Імя користувача  <input type="text", class="userName" ></div>
+    <br>
+    <div>Вік користувача  <input type="number", class="userAge" ></div>
+    <button>save car</button>
+</form>
+<hr>
+
+
+
+
+
+<form name="f2">
+    <div>model <input type="text", class="model" ></div>
+    <br>
+    <div>type <input type="text", class="type" ></div>
+    <br>
+    <div>volume <input type="number", class="volume" ></div>
+    <button>save</button>
+</form>
+<script>
+    // -створити форму з інпутами для name та age.
+    //     При відправці форми записати об'єкт в localstorage
+    let inputs = document.getElementsByTagName('input');
+    let name = inputs[0];
+    let age = inputs[1];
+    let btn = document.getElementsByTagName('button')[0];
+    btn.onclick = function (){
+        let nameValue = name.value;
+        let ageValue = age.value;
+        localStorage.setItem('userData', JSON.stringify({name: nameValue, age: ageValue}));
+    }
+    //
+    // -створити форму з інпутами для model,type та volume автівки.
+    //     при відпарвці форми об'єкти зберігаються в масиві в локальному сховищі.
+    let model = document.getElementsByClassName('model')[0];
+    let type = document.getElementsByClassName('type')[0];
+    let volume = document.getElementsByClassName('volume')[0];
+    let btn1 = document.getElementsByTagName('button')[1];
+    let btn2 = document.getElementsByTagName('button')[2];
+    btn1.onclick =function (){
+        let modelAuto = model.value;
+        let typeAuto = type.value;
+        let volumeAuto = volume.value;
+        let obj = {model:modelAuto, type:typeAuto, volume:volumeAuto};
+        let cars = JSON.parse(localStorage.getItem('cars')) || [];
+        console.log(cars);
+        cars.push(obj);
+        localStorage.setItem('cars', JSON.stringify(cars));
+    }
+    // localStorage.setItem('cars', JSON.stringify(cars));
+</script>
+</body>
+</html>
