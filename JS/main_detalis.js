@@ -28,26 +28,21 @@ let itemButton = document.createElement('button');
 
         itemButton.onclick = function () {
                 itemButton.disabled = true;
-                window.open('post-details.html');
-//                 fetch('https://jsonplaceholder.typicode.com/posts/' + jeson[0].id + '/comments').then(response => response.json()).then(arrayArr =>{
-//                     console.log(jeson[0].id);
-//                   let wrapComents = document.createElement('div');
-//                   for (let element of arrayArr){
-//                       console.log(element);
-//                           let postComentDiv = document.createElement('div');
-//                           postComentDiv.innerHTML = `
-//                           <h2>PostId - ${element.postId}</h2>
-//                           <h2>Id - ${element.id}</h2>
-//                           <h2>Name - ${element.name}</h2>
-//                           <h2>Email - ${element.email}</h2>
-//                           <h2>Body - ${element.body}</h2>
-//
-//                           `
-//                           wrapComents.append(postComentDiv);
-//                   }
-//                   wrap.append(wrapComents);
-//                   // wrap.append(itemButton);
-//                 });
+            window.open('post-details.html');
+                fetch('https://jsonplaceholder.typicode.com/user/' + jeson[0].id + '/posts').then(response => response.json()).then(arrayArr =>{
+                    console.log(jeson[0].id);
+                  let wrapComents = document.createElement('div');
+                  for (let element of arrayArr){
+                      console.log(element);
+                          let postComentDiv = document.createElement('div');
+                          postComentDiv.innerHTML = `
+                          <h2>Title - ${element.title}</h2>
+                                                `
+                          wrapComents.append(postComentDiv);
+                  }
+                  wrap.append(wrapComents);
+                  // wrap.append(itemButton);
+                });
 //
 //
 //

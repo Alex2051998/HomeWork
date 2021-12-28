@@ -18,6 +18,19 @@
 // });
 // ' + jeson.id + '
 
+
+
+
+// На странице user-details.html:
+// 4 Вывести всю, без исключения, информацию про объект user на кнопку/ссылку которого был совершен клик ранее.
+// 5 Добавить кнопку "post of current user", при клике на которую, появляются title всех постов текущего юзера
+// (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
+
+// На странице post-details.html:
+// 7 Вывести всю, без исключения, информацию про объект post на кнопку/ссылку которого был совершен клик ранее.
+// 8 Ниже информации про пост, вывести все комментарии текущего поста (эндпоинт для получения информации - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
+//
+
 let wrap = document.createElement('div');
 let jeson = JSON.parse(localStorage.getItem('key'));
 fetch('https://jsonplaceholder.typicode.com/users/' + jeson[0].id + '/posts').then(response => response.json()).then(arrayArr =>{
