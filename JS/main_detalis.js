@@ -10,12 +10,14 @@
 // document.body.append(wrap);
 
 let wraper = document.createElement('div');
+wraper.classList.add('wrapercss');
 let jeson = JSON.parse(localStorage.getItem('key'));
 jeson.forEach(item => {
         for (let key in item){
                 let div = document.createElement('div');
                 div.innerText = `${key} : ${item[key]}`;
-                document.body.appendChild(div);
+                wraper.append(div)
+                document.body.appendChild(wraper);
         }
 });
 
@@ -23,8 +25,10 @@ jeson.forEach(item => {
 
 
 let wrap = document.createElement('div');
+wrap.classList.add('wrapcss');
 let itemButton = document.createElement('button');
     itemButton.innerText = 'post of current user';
+    itemButton.classList.add('button1');
 
         itemButton.onclick = function () {
                 itemButton.disabled = true;
@@ -32,9 +36,11 @@ let itemButton = document.createElement('button');
                 fetch('https://jsonplaceholder.typicode.com/user/' + jeson[0].id + '/posts').then(response => response.json()).then(arrayArr =>{
                     console.log(jeson[0].id);
                   let wrapComents = document.createElement('div');
+                  wrapComents.classList.add('wrapCom');
                   for (let element of arrayArr){
                       console.log(element);
                           let postComentDiv = document.createElement('div');
+                          postComentDiv.classList.add('wrapCom1');
                           postComentDiv.innerHTML = `
                           <h2>Title - ${element.title}</h2>
                                                 `

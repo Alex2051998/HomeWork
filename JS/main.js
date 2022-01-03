@@ -7,6 +7,7 @@
 
 fetch('https://jsonplaceholder.typicode.com/users').then(response => response.json()).then(array => {
     let wrap = document.createElement('div');
+    wrap.classList.add('wrapcss');
     for (let item of array) {
         let arrayItem = document.createElement('div');
         arrayItem.classList.add('indexItem');

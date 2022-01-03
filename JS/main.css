@@ -1,0 +1,62 @@
+.wrapcss{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 50%;
+    row-gap: 10px;
+    flex-wrap: wrap;
+}
+.indexItem{
+    width: 300px;
+    background-color: aqua;
+}
+
+.button1{
+    margin-top: 100px;
+    background-color: aqua;
+}
+
+.wrapercss{
+    width: 500px;
+    align-items: center;
+    text-align: center;
+    background-color: aqua;
+    margin: 0 auto;
+
+}
+
+.wrapCom{
+    display: flex;
+    column-gap: 5px;
+    row-gap: 5px;
+    flex-wrap: wrap;
+
+
+}
+
+.wrapCom1{
+    width: 19%;
+    background-color: aqua;
+}
+
+.postwrap{
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    column-gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.postCom1{
+    background: aqua;
+    row-gap: 10px;
+    column-gap: 10px;
+
+}
+.postCom2{
+    background: aqua;
+    row-gap: 10px;
+    column-gap: 10px;
+}
