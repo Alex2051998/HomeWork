@@ -34,29 +34,29 @@
 let wrap = document.createElement('div');
 wrap.classList.add('postwrap');
 let jeson = JSON.parse(localStorage.getItem('key'));
-fetch('https://jsonplaceholder.typicode.com/users/' + jeson[0].id + '/posts').then(response => response.json()).then(arrayArr =>{
-    console.log(jeson[0].id);
-    let wrapComents = document.createElement('div');
-    wrapComents.classList.add('postCom11');
-    for (let element of arrayArr){
-        console.log(element);
-        let postComentDiv = document.createElement('div');
-        postComentDiv.classList.add('postCom1');
-        postComentDiv.innerHTML = `
-                          <h4>userId - ${element.userId}</h4>
-                          <h4>id - ${element.id}</h4>
-                          <h4>title - ${element.title}</h4>
-                          <h4>body - ${element.body}</h4>
-                                                                         
-                          `
-        wrapComents.append(postComentDiv);
-    }
-    wrap.append(wrapComents);
-    // wrap.append(itemButton);
-});
+// fetch('https://jsonplaceholder.typicode.com/users/' + jeson[0].id + '/posts').then(response => response.json()).then(arrayArr =>{
+//     console.log(jeson[0].id);
+//     let wrapComents = document.createElement('div');
+//     wrapComents.classList.add('postCom11');
+//     for (let element of arrayArr){
+//         console.log(element);
+//         let postComentDiv = document.createElement('div');
+//         postComentDiv.classList.add('postCom1');
+//         postComentDiv.innerHTML = `
+//                           <h4>userId - ${element.userId}</h4>
+//                           <h4>id - ${element.id}</h4>
+//                           <h4>title - ${element.title}</h4>
+//                           <h4>body - ${element.body}</h4>
+//
+//                           `
+//         wrapComents.append(postComentDiv);
+//     }
+//     wrap.append(wrapComents);
+//     // wrap.append(itemButton);
+// });
 
 // wrap.append(itemButton);
-document.body.append(wrap);
+// document.body.append(wrap);
 
 
 
