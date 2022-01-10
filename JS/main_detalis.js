@@ -32,7 +32,7 @@ let itemButton = document.createElement('button');
 
         itemButton.onclick = function () {
                 itemButton.disabled = true;
-            window.open('post-details.html');
+            // window.open('post-details.html');
                 fetch('https://jsonplaceholder.typicode.com/user/' + jeson[0].id + '/posts').then(response => response.json()).then(arrayArr =>{
                     console.log(jeson[0].id);
                   let wrapComents = document.createElement('div');
@@ -42,7 +42,7 @@ let itemButton = document.createElement('button');
                           let postComentDiv = document.createElement('div');
                           postComentDiv.classList.add('wrapCom1');
                           postComentDiv.innerHTML = `
-                          <h2>Title - ${element.title}</h2>
+                          <h2><a href="post-details.html">Title - ${element.title}</a></h2>
                                                 `
                           wrapComents.append(postComentDiv);
                   }
